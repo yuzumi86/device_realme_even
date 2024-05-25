@@ -1,0 +1,43 @@
+# Bluetooth
+persist.bluetooth.bluetooth_audio_hal.disabled=true
+
+# Dex
+persist.bg.dexopt.enable=true
+dalvik.vm.dexopt.secondary=true
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=quicken
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+
+# Iorap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+iorapd.readahead.enable=true
+
+# Display
+ro.sf.lcd_density=320
+
+# LMKD
+ro.lmk.psi_complete_stall_ms=150
+ro.lmk.swap_free_low_percentage=20
+ro.lmk.kill_timeout_ms=100
+
+# Privapp permissions whitelisting
+ro.control_privapp_permissions=log
+
+# Tweak the memory management of the device, enable more background apps.. etc..
+ro.config.fha_enable=true
+ro.sys.fw.bg_apps_limit=32
+ro.config.dha_cached_max=16
+ro.config.dha_empty_max=42
+ro.config.dha_empty_init=32
+ro.config.dha_lmk_scale=0.545
+ro.config.dha_th_rate=2.3
+ro.config.sdha_apps_bg_max=64
+ro.config.sdha_apps_bg_min=8
+
+# WFD
+persist.sys.wfd.nohdcp=1
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0

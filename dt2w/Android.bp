@@ -1,0 +1,23 @@
+android_app {
+    name: "DT2W-Service-even",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+
+    optimize: {
+        enabled: false,
+    },
+
+    required: [
+        "privapp-permissions_org.lineageos.dt2w.even",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_org.lineageos.dt2w.even",
+    sub_dir: "permissions",
+    src: "privapp-permissions_org.lineageos.dt2w.even.xml",
+    filename_from_src: true,
+}
