@@ -154,9 +154,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
-TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
+# TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
+# TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 
 # Security patch level
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
