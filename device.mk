@@ -199,9 +199,9 @@ PRODUCT_PACKAGES += \
     libpuresoftkeymasterdevice.vendor:64
 
 
-# ImsInit hack
-PRODUCT_PACKAGES += \
-    ImsInit
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+
 
 # Init
 PRODUCT_PACKAGES += \
@@ -226,10 +226,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.even
 
-# MTK IMS Overlays
-PRODUCT_PACKAGES += \
-    mtk-ims \
-    mtk-ims-telephony
+
 
 # NFC
 PRODUCT_PACKAGES += \
