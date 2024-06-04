@@ -182,6 +182,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_even
 HWUI_COMPILE_FOR_PERF := true
 
 # Manifests and SKU
-# DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/framework_compatibility_matrix.xml
-# DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
-# DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
