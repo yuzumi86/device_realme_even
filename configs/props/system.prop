@@ -20,11 +20,6 @@ debug.performance.tuning=1
 debug.egl.profiler=1
 debug.egl.hw=1
 debug.composition.type=gpu
-
-# IMS
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
 	
 # NFC
 persist.sys.nfc.disPowerSave=1
