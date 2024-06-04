@@ -38,6 +38,7 @@ TARGET_BOOT_ANIMATION_RES := 720
 
 # Cipher additions
 CIPHER_MAINTAINER := ismasrull
+CIPHER_GAPPS := true
 
 # Build info
 BUILD_FINGERPRINT := "realme/RMX3191T2/RMX3191:11/RP1A.200720.011/1647614838132:user/release-keys"
