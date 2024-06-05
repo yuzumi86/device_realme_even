@@ -142,23 +142,12 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
 
-PRODUCT_PACKAGES += \
-    MtkInCallService
+
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
 
-# Rootdir
-PRODUCT_PACKAGES += \
-    init.connectivity.rc \
-    init.modem.rc \
-    init.mt6768.rc \
-    init.mt6768.usb.rc \
-    init.project.rc \
-    init.sensor_1_0.rc \
-    fstab.mt6768 \
-    fstab.ramdisk \
-    ueventd.mtk.rc
+
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -176,11 +165,8 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss@2.1.vendor
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.0-impl-2.1
+
+    
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -230,17 +216,11 @@ PRODUCT_PACKAGES += \
 
 
 
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    com.gsma.services.nfc  \
-    NfcNci \
-    SecureElement \
-    Tag
+
     
     # Neutral Networks
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.4.vendor
+    android.hardware.neuralnetworks@1.3.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
