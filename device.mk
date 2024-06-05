@@ -143,8 +143,8 @@ PRODUCT_PACKAGES += \
 
 
 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
+# PRODUCT_COPY_FILES += \
+  #  $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
 
 
 
@@ -190,11 +190,17 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
 
-# Init
+# Ramdisk
 PRODUCT_PACKAGES += \
-    $(DEVICE_PATH)/rootdir/etc/init.mt6768.rc \
-    $(DEVICE_PATH)/rootdir/etc/fstab.mt6768 \
-    $(DEVICE_PATH)/rootdir/bin/perf_profile.sh
+    init.recovery.mt6768.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6768.rc \
+    init.mt6768.usb.rc \
+    init.sensor_1_0.rc \
+    fstab.mt6768 \
+    fstab.mt6768.ramdisk \
+    ueventd.mtk.rc
 
 
 # Keylayouts
