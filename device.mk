@@ -311,14 +311,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor
 
-# Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0.vendor \
-    android.hardware.sensors@2.0-impl \
-    android.hardware.sensors@2.0-service \
 
-PRODUCT_PACKAGES += \
-    libsensorndkbridge
 	
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -336,8 +329,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.4.vendor \
     android.hardware.wifi.supplicant@1.4.vendor \
-    android.hardware.wifi.hostapd@1.2.vendor \
-    android.hardware.wifi@1.4-impl
+    android.hardware.wifi.hostapd@1.2.vendor 
+    
 
 PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl \
