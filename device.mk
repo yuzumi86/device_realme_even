@@ -192,7 +192,6 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
- #   init.recovery.mt6768.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6768.rc \
