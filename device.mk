@@ -102,8 +102,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.bluetooth.a2dp@1.0.vendor
 
-PRODUCT_PACKAGES += \
-    libbtconfigstore
+
     
     # DRM
 PRODUCT_PACKAGES += \
@@ -193,9 +192,9 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6768.rc \
-    fstab.mt6768 \
-    perf_profile.sh
+    $(DEVICE_PATH)/rootdir/etc/init.mt6768.rc \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6768 \
+    $(DEVICE_PATH)/rootdir/bin/perf_profile.sh
 
 
 # Keylayouts
