@@ -17,6 +17,12 @@ bin/kpoc_charger
 etc/init/kpoc_charger.rc
 lib/libshowlogo.so
 
+# DRM (Hardware) - from Redmi/selene/selene:12/SP1A.210812.016/V13.0.1.0.SKUMIXM:user/release-keys
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine|8307cea32c20bdc6e7456a6060ebefcfe743b02c
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+
+
 # Kernel-Modules
 vendor/lib/modules/bt_drv.ko:product/vendor_overlay/30/lib/modules/bt_drv.ko
 vendor/lib/modules/fmradio_drv.ko:product/vendor_overlay/30/lib/modules/fmradio_drv.ko
