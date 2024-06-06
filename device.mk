@@ -55,15 +55,18 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.audio.common@6.0-util \
+    android.hardware.audio.common-util.vendor \
+    android.hardware.audio.common@6.0-util.vendor \
     android.hardware.audio@6.0-util \
-    android.hardware.soundtrigger@2.3.vendor 
+    android.hardware.audio@6.0-util.vendor \
+    android.hardware.soundtrigger@2.3.vendor \
+    android.hardware.bluetooth.audio-impl \
 
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
+    audio_policy.stub \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.stub
 
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
@@ -71,7 +74,6 @@ PRODUCT_PACKAGES += \
     libbundlewrapper \
     libdownmix \
     libtinycompress \
-    libtinyxml \
     libalsautils \
     libnbaio_mono
 
