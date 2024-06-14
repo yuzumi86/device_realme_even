@@ -19,7 +19,7 @@ DEVICE_PATH := device/realme/even
 # Call proprietary blob setup
 $(call inherit-product, vendor/realme/even/even-vendor.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -99,12 +99,19 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    libbluetooth_audio_session.vendor \
     android.hardware.bluetooth.a2dp@1.0 \
     android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth.audio@2.1-impl \
-    android.hardware.bluetooth.a2dp@1.0.vendor
+    android.hardware.bluetooth.a2dp@1.0.vendor \
+    libbtconfigstore
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor
 
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
     
     # DRM
 PRODUCT_PACKAGES += \
