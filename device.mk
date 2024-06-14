@@ -137,6 +137,11 @@ PRODUCT_PACKAGES += \
     # Public Libraries
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+# APN
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+
     
     # Protobuf
 PRODUCT_PACKAGES += \
