@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_even.mk
+    $(LOCAL_DIR)/cipher_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_even-eng \
-    derp_even-userdebug \
-    derp_even-user
+    cipher_even-eng \
+    cipher_even-userdebug \
+    cipher_even-user
