@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor
 PRODUCT_PACKAGES += \
     MtkInCallService
-    
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
 
@@ -157,7 +157,9 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     fstab.mt6768 \
     fstab.ramdisk \
-    ueventd.mtk.rc
+    ueventd.mtk.rc \
+    perf_profile.sh
+
 
 # Fingerprint
 PRODUCT_PACKAGES += \
