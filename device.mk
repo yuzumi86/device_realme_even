@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor
 PRODUCT_PACKAGES += \
     MtkInCallService
+    
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
 
