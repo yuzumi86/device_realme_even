@@ -117,11 +117,14 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     GoogleCameraGo
-    
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
     
+    # APN
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
     
     # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -142,6 +145,7 @@ PRODUCT_PACKAGES += \
     MtkInCallService
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
+
 # Rootdir
 PRODUCT_PACKAGES += \
     init.connectivity.rc \
@@ -153,6 +157,7 @@ PRODUCT_PACKAGES += \
     fstab.mt6768 \
     fstab.ramdisk \
     ueventd.mtk.rc
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.even
