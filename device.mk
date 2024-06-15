@@ -55,28 +55,23 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.audio.common@6.0-util \
-    android.hardware.audio.common-util.vendor \
-    android.hardware.audio.common@6.0-util.vendor \
     android.hardware.audio@6.0-util \
-    android.hardware.audio@6.0-util.vendor \
-    android.hardware.soundtrigger@2.3.vendor \
-    android.hardware.bluetooth.audio-impl \
-
+    android.hardware.soundtrigger@2.3.vendor 
 PRODUCT_PACKAGES += \
-    audio_policy.stub \
+    audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-
+    audio_policy.stub
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
     libaudiopreprocessing \
     libbundlewrapper \
     libdownmix \
     libtinycompress \
+    libtinyxml \
     libalsautils \
     libnbaio_mono
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
@@ -99,19 +94,13 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbluetooth_audio_session.vendor \
     android.hardware.bluetooth.a2dp@1.0 \
     android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth.a2dp@1.0.vendor \
+    android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.bluetooth.a2dp@1.0.vendor
+
+PRODUCT_PACKAGES += \
     libbtconfigstore
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor
-
-PRODUCT_PACKAGES += \
-    libstdc++.vendor
     
     # DRM
 PRODUCT_PACKAGES += \
@@ -128,7 +117,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     GoogleCameraGo
-
+    
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -137,11 +126,6 @@ PRODUCT_PACKAGES += \
     # Public Libraries
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# APN
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
     
     # Protobuf
 PRODUCT_PACKAGES += \
@@ -154,33 +138,39 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
-
-
-
-# PRODUCT_COPY_FILES += \
-  #  $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
-
-
-
+PRODUCT_PACKAGES += \
+    MtkInCallService
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6768.rc \
+    init.mt6768.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    fstab.mt6768 \
+    fstab.ramdisk \
+    ueventd.mtk.rc
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.even
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml
-
     
     # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss.measurement_corrections@1.1.vendor \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss@2.1.vendor
-
-
-    
-
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.0-impl-2.1
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0 \
@@ -189,7 +179,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libhidltransport.vendor
-
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster4.vendor:64 \
@@ -198,24 +187,14 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor:64 \
     libsoft_attestation_cert.vendor:64 \
     libpuresoftkeymasterdevice.vendor:64
-
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
-
-# Ramdisk
+# Init
 PRODUCT_PACKAGES += \
-    init.recovery.mt6768.rc \
-    init.connectivity.rc \
-    init.modem.rc \
     init.mt6768.rc \
-    init.mt6768.usb.rc \
-    init.sensor_1_0.rc \
     fstab.mt6768 \
-    fstab.mt6768.ramdisk \
-    ueventd.mtk.rc
-
+    perf_profile.sh
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -228,40 +207,39 @@ PRODUCT_PACKAGES += \
     libsuspend \
     android.hardware.health@2.0
     
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.even
 
-
-
-
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    com.gsma.services.nfc  \
+    NfcNci \
+    SecureElement \
+    Tag
     
     # Neutral Networks
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
+    android.hardware.neuralnetworks@1.4.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
-
 PRODUCT_PACKAGES += \
     NotchBarKiller
-
 # Permissions
- PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
-  #  $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
     $(DEVICE_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
 	$(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
-
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -293,6 +271,7 @@ PRODUCT_PACKAGES += \
 -include $(DEVICE_PATH)/configs/props/product.prop
 -include $(DEVICE_PATH)/configs/props/system.prop
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
 	
 # RemovePackages
 PRODUCT_PACKAGES += \
@@ -306,9 +285,9 @@ PRODUCT_PACKAGES += \
 #    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmedia_helper-v30.so \
 #    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v30.so
     
-
-
-    
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.mt6768.rc
 
 # RcsService
 PRODUCT_PACKAGES += \
@@ -329,7 +308,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0.vendor \
+    android.hardware.sensors@2.0-impl \
+    android.hardware.sensors@2.0-service 
 
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
 	
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -343,20 +329,17 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service-lazy
-
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.4.vendor \
     android.hardware.wifi.supplicant@1.4.vendor \
-    android.hardware.wifi.hostapd@1.2.vendor 
-    
+    android.hardware.wifi.hostapd@1.2.vendor \
+    android.hardware.wifi@1.4-impl
 
 PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
-    
-
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
