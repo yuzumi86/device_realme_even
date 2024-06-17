@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cipher_even.mk
+    $(LOCAL_DIR)/aosp_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    cipher_even-eng \
-    cipher_even-userdebug \
-    cipher_even-user
+    aosp_even-eng \
+    aosp_even-userdebug \
+    aosp_even-user
