@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common Pixel-Experience stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Miku stuff
+$(call inherit-product, vendor/miku/build/product/miku_product.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/even/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_even
+PRODUCT_NAME := miku_even
 PRODUCT_DEVICE := even
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme C25
@@ -38,12 +38,14 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 TARGET_BOOT_ANIMATION_RES := 720
 
-# Cipher additions
-# CIPHER_MAINTAINER := ismasrull
-# CIPHER_GAPPS := true
+# Maintaier
+MIKU_MASTER := ismasrull
+
+# MikuUI COMMUNITY
+TARGET_MIKU_BUILD_VARIANT := COMMUNITY
 
 # Build info
-BUILD_FINGERPRINT := "realme/RMX3191T2/RMX3191:11/RP1A.200720.011/1647614838132:user/release-keys"
+BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=even \
     PRODUCT_NAME=even \
