@@ -41,8 +41,8 @@ TARGET_BOOT_ANIMATION_RES := 720
 # Fluid flags
 FLUID_BUILD_TYPE := UNOFFICIAL
 PRODUCT_PRODUCT_PROPERTIES += \
-	ro.fluid.maintainer=ismasrull \
-        ro.fluid.cpu=G85
+	ro.fluid.maintainer=ismasrull 
+        
 	
 
 # Build info
