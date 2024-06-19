@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common Miku stuff
-$(call inherit-product, vendor/miku/build/product/miku_product.mk)
+# Inherit some common fluid stuff
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -38,11 +38,11 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 TARGET_BOOT_ANIMATION_RES := 720
 
-# Maintaier
-MIKU_MASTER := ismasrull
-
-# MikuUI COMMUNITY
-TARGET_MIKU_BUILD_VARIANT := COMMUNITY
+# Fluid flags
+FLUID_BUILD_TYPE := UNOFFICIAL
+PRODUCT_PRODUCT_PROPERTIES += \
+	ro.fluid.maintainer=ismasrull \
+	ro.fluid.cpu=SDM860
 
 # Build info
 BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys"
