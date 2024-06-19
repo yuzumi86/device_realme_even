@@ -35,13 +35,14 @@ PRODUCT_MANUFACTURER := realme
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-
+TARGET_INCLUDE_GAPPS := true
 TARGET_BOOT_ANIMATION_RES := 720
 
 # Fluid flags
 FLUID_BUILD_TYPE := UNOFFICIAL
 PRODUCT_PRODUCT_PROPERTIES += \
-	ro.fluid.maintainer=ismasrull 
+	ro.fluid.maintainer=ismasrull \
+        ro.fluid.cpu=G85
 	
 
 # Build info
