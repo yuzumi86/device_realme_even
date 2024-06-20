@@ -59,11 +59,10 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3.vendor 
 
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
+    audio_policy.stub \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.stub
 
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
