@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_even.mk
+    $(LOCAL_DIR)/derp_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_even-eng \
-    lineage_even-userdebug \
-    lineage_even-user
+    derp_even-eng \
+    derp_even-userdebug \
+    derp_even-user
