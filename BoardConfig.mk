@@ -91,7 +91,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/realme/even
 TARGET_KERNEL_CONFIG := even_defconfig
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilt/clang/zycClang
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilt/clang/proton
 TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 
