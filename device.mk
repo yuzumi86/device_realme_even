@@ -57,12 +57,14 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.common@6.0-util \
     android.hardware.audio@6.0-util \
     android.hardware.soundtrigger@2.3.vendor 
+
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
     audio_policy.stub
+
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
     libaudiopreprocessing \
@@ -72,6 +74,7 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libalsautils \
     libnbaio_mono
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
@@ -100,8 +103,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0.vendor
 
 
-PRODUCT_PACKAGES += \
-    libbtconfigstore
+
     
     # DRM
 PRODUCT_PACKAGES += \
@@ -142,8 +144,8 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
-PRODUCT_PACKAGES += \
-    MtkInCallService
+
+
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
@@ -154,10 +156,8 @@ PRODUCT_PACKAGES += \
     init.modem.rc \
     init.mt6768.rc \
     init.mt6768.usb.rc \
-    init.project.rc \
     init.sensor_1_0.rc \
     fstab.mt6768 \
-    fstab.ramdisk \
     ueventd.mtk.rc \
     perf_profile.sh
 
@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.even
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
@@ -175,11 +176,12 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.measurement_corrections@1.1.vendor \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss@2.1.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.0-impl-2.1
+    android.hardware.health@2.1-impl 
+    
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0 \
@@ -196,14 +198,11 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor:64 \
     libsoft_attestation_cert.vendor:64 \
     libpuresoftkeymasterdevice.vendor:64
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
-# Init
-PRODUCT_PACKAGES += \
-    init.mt6768.rc \
-    fstab.mt6768 \
-    perf_profile.sh
+
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -223,32 +222,33 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    com.gsma.services.nfc  \
     NfcNci \
     SecureElement \
     Tag
     
     # Neutral Networks
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.4.vendor
+    android.hardware.neuralnetworks@1.3.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
+
 PRODUCT_PACKAGES += \
     NotchBarKiller
+
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
-    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
-
+    frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml 
+    
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
     $(DEVICE_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
-	$(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
+    $(DEVICE_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -319,9 +319,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0.vendor \
-    android.hardware.sensors@2.0-impl \
-    android.hardware.sensors@2.0-service 
+    android.hardware.sensors@2.0.vendor 
+    
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge
@@ -342,7 +341,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.4.vendor \
     android.hardware.wifi.supplicant@1.4.vendor \
     android.hardware.wifi.hostapd@1.2.vendor \
-    android.hardware.wifi@1.4-impl
+    
 
 PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl \
