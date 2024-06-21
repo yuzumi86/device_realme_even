@@ -15,7 +15,7 @@
 #
 
 # Inherit some common fluid stuff
-$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
+$(call inherit-product, vendor/arrow/config/common_full_phone.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -27,23 +27,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/even/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := fluid_even
+PRODUCT_NAME := arrow_even
 PRODUCT_DEVICE := even
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme C25
 PRODUCT_MANUFACTURER := realme
+
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_INCLUDE_GAPPS := true
 TARGET_BOOT_ANIMATION_RES := 720
 
-# Fluid flags
-FLUID_BUILD_TYPE := UNOFFICIAL
-PRODUCT_PRODUCT_PROPERTIES += \
-	ro.fluid.maintainer=ismasrull 
-        
-	
+# ArrowOS additions
+DEVICE_MAINTAINER := ismasrull
 
 # Build info
 BUILD_FINGERPRINT := "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys"
