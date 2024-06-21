@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common fluid stuff
-$(call inherit-product, vendor/arrow/config/common_full_phone.mk)
+# Inherit some common ArrowOS stuff.
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
