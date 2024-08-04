@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_even.mk
+    $(LOCAL_DIR)/cipher_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_even-eng \
-    arrow_even-userdebug \
-    arrow_even-user
+    cipher_even-eng \
+    cipher_even-userdebug \
+    cipher_even-user
