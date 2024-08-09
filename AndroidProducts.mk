@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cipher_even.mk
+    $(LOCAL_DIR)/blaze_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    cipher_even-eng \
-    cipher_even-userdebug \
-    cipher_even-user
+    blaze_even-eng \
+    blaze_even-userdebug \
+    blaze_even-user
