@@ -277,8 +277,7 @@ PRODUCT_PACKAGES += \
     libsfplugin_ccodec
 
 # Properties
--include $(DEVICE_PATH)/configs/props/product.prop
--include $(DEVICE_PATH)/configs/props/system.prop
+-include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 	
