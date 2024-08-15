@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common ProjectBlazeOS stuff.
-$(call inherit-product, vendor/blaze/config/common_full_phone.mk)
+# Inherit some common ArrowOS stuff.
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/even/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := blaze_even
+PRODUCT_NAME := arrow_even
 PRODUCT_DEVICE := even
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme C25
@@ -39,11 +39,9 @@ TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_INCLUDE_GAPPS := true
 TARGET_BOOT_ANIMATION_RES := 720
 
-# Maintainer
-BLAZE_MAINTAINER := ismasrull
+# ArrowOS additions
+DEVICE_MAINTAINER := ismasrull
 
-# GMS
-WITH_GAPPS := true
 
 # Build info
 BUILD_FINGERPRINT := "realme/RMX3191T2/RMX3191:11/RP1A.200720.011/1647614838132:user/release-keys"
