@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/blaze_even.mk
+    $(LOCAL_DIR)/arrow_even.mk
 
 COMMON_LUNCH_CHOICES := \
-    blaze_even-eng \
-    blaze_even-userdebug \
-    blaze_even-user
+    arrow_even-eng \
+    arrow_even-userdebug \
+    arrow_even-user
