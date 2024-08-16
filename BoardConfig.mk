@@ -77,7 +77,7 @@ BUILD_BROKEN_DUP_RULES := true
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-BOARD_KERNEL_CMDLINE += androidboot.selinux=enforcing
+
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -181,10 +181,10 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # BOARD_VNDK_VERSION := current
 
 # Sepolicy
-# include device/mediatek/sepolicy_vndr/SEPolicy.mk
-TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
-TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS := $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SELINUX_IGNORE_NEVERALLOWS := true
 
 #DPI
