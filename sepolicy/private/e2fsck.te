@@ -1,0 +1,9 @@
+type mmcblk_device;
+type mmcblk0_47_device;
+
+# Allow e2fsck read all provide 
+allow fsck mmcblk_device:blk_file { read };
+allow fsck mmcblk0_47_device:blk_file { read };
+allow fsck tmpfs:file { read };
+allow fsck block_device:blk_file { read write open getattr };
+

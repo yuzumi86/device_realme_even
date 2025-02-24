@@ -1,0 +1,3 @@
+type sysfs_mmcblk, fs_type;
+# Allow write sysfs file
+allow vold sysfs_mmcblk:file write;

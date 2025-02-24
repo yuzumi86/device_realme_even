@@ -1,0 +1,2 @@
+# Allow fsck search dir
+allow fsck mnt_vendor_file:dir search;
