@@ -16,7 +16,7 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 iorapd.readahead.enable=true
 
 # Display
-ro.sf.lcd_density=320
+ro.sf.lcd_density=380
 
 # LMKD
 ro.lmk.psi_complete_stall_ms=150
