@@ -130,6 +130,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_showlogo
 
+# PowerOffAlarm
+PRODUCT_PACKAGES += \
+PowerOffAlarm
+
 # Vendor overlay
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/vendor-overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS))
@@ -153,6 +157,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.mediatek-libperfmgr 
+
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-service.mediatek-mali
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
     $(DEVICE_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
@@ -174,8 +186,16 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
+    $(DEVICE_PATH)
 
+# Vibrator
+TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.mediatek
 
 # Bluetooth Audio (System-side HAL, sysbta)
 PRODUCT_PACKAGES += \
@@ -185,4 +205,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
-    
+
+# Audio Hardware 
+PRODUCT_PACKAGES += \
+BesLoudness
