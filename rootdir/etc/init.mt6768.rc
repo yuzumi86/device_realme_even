@@ -46,7 +46,7 @@ on post-fs
     # and some MTK daemons can crash because of that
     # (at post-fs, the fstab has already been used to mount the partitions,
     #  so it is fine to just revert back)
-    umount /vendor/etc/fstab.mt6765
+    umount /vendor/etc/fstab.mt6768
 
 on post-fs-data
     # VideoCodec
