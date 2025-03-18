@@ -19,7 +19,7 @@
 from hashlib import sha1
 import sys
 
-device='RMX2185'
+device='even'
 vendor='realme'
 
 lines = [ line for line in open('proprietary-files.txt', 'r') ]
