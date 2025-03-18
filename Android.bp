@@ -2,9 +2,6 @@ soong_namespace {
     imports: [
         "vendor/realme/even",
     ],
-imports: [
-        "hardware/oplus",
-    ],
 }
 
 subdirs = [
